@@ -6,27 +6,38 @@ public class LevelHandlerScript : MonoBehaviour {
 	public Transform TilePrefab;
 	public Transform WallPrefab;
 	public Texture2D LevelMap;
-	public Rect sRect;
+	public int level = 0;
+	public int levelCount = 2;
 
 	Color[] tileMapKey = {Color.white, Color.black};
 	int[,] tileMap;
-	int level = 0;
 
 	// Use this for initialization
 	void Start () {
+		SetLevel (level);
+	}
+
+	void SetLevel(int nLevel){
+		for(int i=0;i<transform.childCount;i++){
+			Destroy (transform.GetChild(0));
+		}
+		Rect sRect = new Rect(0,0,0,0);
+		Vector2 dimFactors = texDimension (levelCount, false);
+		Vector2 lvlAdjust = texDimension(nLevel,true);
+		sRect.width = LevelMap.width / dimFactors.x;
+		sRect.height = LevelMap.height / dimFactors.y;
 		int width = Mathf.FloorToInt(sRect.width);
 		int height = Mathf.FloorToInt(sRect.height);
-		int x = Mathf.FloorToInt(sRect.x) + width * level;
-		int y = Mathf.FloorToInt (sRect.y) + height*level / 4;
-			tileMap = new int[width,height];
+		int x = Mathf.FloorToInt(sRect.x + width * lvlAdjust.x);
+		int y = Mathf.FloorToInt (sRect.y + height*lvlAdjust.y);
+		print (x + ":" + y + ":" + width + ":" + height);
+		tileMap = new int[width,height];
 		Color[] mapColors = LevelMap.GetPixels(x,y,width,height);
 		for(int i=0;i<height;i++){
 			for(int j=0;j<width;j++){
-				print (width*i+j);
 				for(int index=0;index<tileMapKey.Length;index++){
 					if(tileMapKey[index] == mapColors[width*i+j]){
 						tileMap[j,i] = index;
-						print (i + "/" + j + ":" + index);
 					}
 				}
 			}
@@ -47,7 +58,19 @@ public class LevelHandlerScript : MonoBehaviour {
 			}
 		}
 	}
-	
+
+	Vector2 texDimension(int index, bool isPoint){
+		Vector2 returnVec = Vector2.zero;
+		if(isPoint){
+			returnVec.x = index % 4;
+			returnVec.y = (index - index % 4) / 4;}
+		else{
+			returnVec.x = Mathf.Min(index, 4);
+			returnVec.y = (index - index % 4) / 4 + 1;
+		}
+		return returnVec;
+	}
+
 	// Update is called once per frame
 	void Update () {
 	
