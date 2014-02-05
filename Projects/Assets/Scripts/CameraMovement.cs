@@ -7,7 +7,7 @@ public class CameraMovement : MonoBehaviour {
 	/// It also jumps when pressing space.
 	/// Make sure to attach a character controller to the same game object.
 	/// It is recommended that you make only one call to Move or SimpleMove per frame.	
-	float speed = 6.0f;
+	float speed = 4.0f;
 	float jumpSpeed = 8.0f;
 	float gravity = 20.0f;
 	private Vector3 moveDirection = Vector3.zero;
