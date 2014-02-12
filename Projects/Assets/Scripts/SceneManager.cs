@@ -7,7 +7,7 @@ public class SceneManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Application.LoadLevel (initialScene);
+		Application.LoadLevelAdditive (initialScene);
 	}
 	
 	// Update is called once per frame
