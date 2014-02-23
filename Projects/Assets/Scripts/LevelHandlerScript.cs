@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.IO;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LevelHandlerScript : MonoBehaviour {
 	
@@ -19,8 +20,10 @@ public class LevelHandlerScript : MonoBehaviour {
 	}
 
 	void SetLevel(int nLevel){
-		for(int i=0;i<transform.childCount;i++){
-			Destroy (transform.GetChild(0)); //tar bort alla nuvarande tiles på kartan.
+		if(transform.childCount > 0){
+		List<GameObject> children = new List<GameObject>();
+		foreach(Transform child in transform) children.Add(child.gameObject);
+		foreach(GameObject child in children) Destroy (child);
 		}
 		tileMap = mapManager.GetLevelInfo(nLevel); //Hämtar info från TextureManager gällande kartan.
 		int width = tileMap.GetUpperBound(0);
@@ -53,6 +56,11 @@ public class LevelHandlerScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+		if(Input.GetKeyDown(KeyCode.Q)){
+			SetLevel(0);
+		}
+		else if(Input.GetKeyDown(KeyCode.E)){
+			SetLevel(1);
+		}
 	}
 }
