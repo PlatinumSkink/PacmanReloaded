@@ -54,6 +54,18 @@ public class LevelHandlerScript : MonoBehaviour {
 		}
 	}
 
+	public int GetPositionInfo (Vector3 position){
+		int x = Mathf.RoundToInt(position.x);
+		int y = Mathf.RoundToInt(position.z);
+		return tileMap[x,y];
+	}
+
+	public int GetGameObjectPositionInfo(GameObject g){
+		int x = Mathf.RoundToInt(g.transform.position.x);
+		int y = Mathf.RoundToInt(g.transform.position.z);
+		return tileMap[x,y];
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Q)){
@@ -61,6 +73,9 @@ public class LevelHandlerScript : MonoBehaviour {
 		}
 		else if(Input.GetKeyDown(KeyCode.E)){
 			SetLevel(1);
+		}
+		else if(Input.GetKeyDown(KeyCode.R)){
+			GetPositionInfo(GameObject.Find ("Player"));
 		}
 	}
 }
