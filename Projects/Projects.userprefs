@@ -1,17 +1,11 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LevelHandlerScript.cs">
-    <Files>
-      <File FileName="Assets\Scripts\LevelHandlerScript.cs" Line="46" Column="2" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CandySpawner.cs">
     <Files>
-      <File FileName="Assets\Scripts\MainMenu.cs" Line="23" Column="55" />
-      <File FileName="Assets\Scripts\SceneManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CreditsScene.cs" Line="21" Column="2" />
->>>>>>> be1b1de4a23596427f7aad6c047f7fcae9ee66c3
+      <File FileName="Assets\Scripts\CandySpawner.cs" Line="7" Column="25" />
+      <File FileName="Assets\Scripts\PrefabManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CandySpawner.cs" Line="7" Column="25" />
+      <File FileName="Assets\Scripts\LevelHandlerScript.cs" Line="44" Column="91" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

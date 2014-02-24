@@ -271,6 +271,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1284697343}
   - 114: {fileID: 1284697344}
+  - 114: {fileID: 1284697345}
   - 114: {fileID: 1284697342}
   m_Layer: 0
   m_Name: LevelHandler
@@ -311,5 +312,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7b2cb26b0275a746964ed0bbeb6874d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1284697345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1284697341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b64e8824b3ce9342a72e8ff6577df06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

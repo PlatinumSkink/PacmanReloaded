@@ -10,12 +10,14 @@ public class LevelHandlerScript : MonoBehaviour {
 	Transform[] PrefabList;
 	int[,] tileMap;
 	MapManager mapManager;
+	PrefabManager prefabManager;
 
 	// Use this for initialization
 	void Start () {
 		mapManager = GetComponent<MapManager>();
+		prefabManager = GetComponent<PrefabManager>();
 		mapManager.ReadFiles();
-		LoadPrefabs();
+		PrefabList = prefabManager.getPrefabs();
 		SetLevel (level);
 	}
 
@@ -28,6 +30,7 @@ public class LevelHandlerScript : MonoBehaviour {
 		tileMap = mapManager.GetLevelInfo(nLevel); //Hämtar info från TextureManager gällande kartan.
 		int width = tileMap.GetUpperBound(0);
 		int height = tileMap.GetUpperBound(1);
+		Vector2 center = new Vector2(width / 2, height / 2);
 		for(int i=0; i<width;i++){
 			for(int j=0;j<height;j++)
 			{
@@ -37,6 +40,9 @@ public class LevelHandlerScript : MonoBehaviour {
 				Transform curPrefab = PrefabList[tileMap[i,j] - 1];
 					tilePosition.y = curPrefab.localScale.y / 2;
 				Transform tile = (Transform) Instantiate(curPrefab, tilePosition, Quaternion.identity);
+					if(tile.GetComponent<CandySpawner>()){
+						tile.GetComponent<CandySpawner>().PlaceCandy((new Vector2(i,j) - center).magnitude, center.magnitude);
+					}
 				tile.parent = transform;
 				}
 			}
@@ -44,15 +50,6 @@ public class LevelHandlerScript : MonoBehaviour {
 		level = nLevel;
 	}
 
-	void LoadPrefabs(){
-		DirectoryInfo dir = new DirectoryInfo("Assets/Resources");
-		FileInfo[] info = dir.GetFiles ("*.PREFAB");
-		PrefabList = new Transform[info.Length];
-		for(int i=0; i<info.Length;i++){
-			string fileName = info[i].Name.Split('.')[0];
-			PrefabList[i] = Resources.Load<Transform>(fileName);
-		}
-	}
 
 	public int GetPositionInfo (Vector3 position){
 		int x = Mathf.RoundToInt(position.x);
@@ -75,7 +72,7 @@ public class LevelHandlerScript : MonoBehaviour {
 			SetLevel(1);
 		}
 		else if(Input.GetKeyDown(KeyCode.R)){
-			GetPositionInfo(GameObject.Find ("Player"));
+			GetGameObjectPositionInfo(GameObject.Find ("Player"));
 		}
 	}
 }
