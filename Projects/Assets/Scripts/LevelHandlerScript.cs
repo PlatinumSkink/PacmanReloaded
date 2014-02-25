@@ -17,6 +17,7 @@ public class LevelHandlerScript : MonoBehaviour {
 		mapManager = GetComponent<MapManager>();
 		prefabManager = GetComponent<PrefabManager>();
 		mapManager.ReadFiles();
+		prefabManager.LoadPrefabs();
 		PrefabList = prefabManager.getPrefabs();
 		SetLevel (level);
 	}
@@ -37,6 +38,7 @@ public class LevelHandlerScript : MonoBehaviour {
 				//Loopar igenom tileMap, utför olika instruktioner beroende på tileMaps värde. 1 är väg, 2 är vägg.
 				Vector3 tilePosition = new Vector3(i, 0, j);
 				if(tileMap[i,j] > 0){
+					print(PrefabList.Length);
 				Transform curPrefab = PrefabList[tileMap[i,j] - 1];
 					tilePosition.y = curPrefab.localScale.y / 2;
 				Transform tile = (Transform) Instantiate(curPrefab, tilePosition, Quaternion.identity);

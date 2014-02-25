@@ -8,15 +8,7 @@ public class PrefabManager : MonoBehaviour {
 	string[] prefabNames;
 	// Use this for initialization
 	void Start () {
-			DirectoryInfo dir = new DirectoryInfo("Assets/Resources");
-			FileInfo[] info = dir.GetFiles ("*.PREFAB");
-			PrefabList = new Transform[info.Length];
-		prefabNames = new string[info.Length];
-			for(int i=0; i<info.Length;i++){
-				string fileName = info[i].Name.Split('.')[0];
-			prefabNames[i] = fileName;
-				PrefabList[i] = Resources.Load<Transform>(fileName);
-			}
+			
 	}
 	
 	// Update is called once per frame
@@ -24,6 +16,17 @@ public class PrefabManager : MonoBehaviour {
 	
 	}
 
+	public void LoadPrefabs(){
+		DirectoryInfo dir = new DirectoryInfo("Assets/Resources");
+		FileInfo[] info = dir.GetFiles ("*.PREFAB");
+		PrefabList = new Transform[info.Length];
+		prefabNames = new string[info.Length];
+		for(int i=0; i<info.Length;i++){
+			string fileName = info[i].Name.Split('.')[0];
+			prefabNames[i] = fileName;
+			PrefabList[i] = Resources.Load<Transform>(fileName);
+		}
+	}
 	public Transform[] getPrefabs(){
 		return PrefabList;
 	}
