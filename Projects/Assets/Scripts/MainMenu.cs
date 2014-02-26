@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour {
 		if (GUI.Button (new Rect (10, 120, 150, 100), "Credits")) {
 			SceneManager.ChangeScene("Credits");
 				}
-		if (GUI.Button (new Rect (10, 120, 150, 100), "Quit")) {
+		if (GUI.Button (new Rect (10, 230, 150, 100), "Quit")) {
 			Application.Quit ();
 		}
 	}
