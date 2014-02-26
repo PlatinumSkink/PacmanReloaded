@@ -17,7 +17,8 @@ public class CandySpawner : MonoBehaviour {
 
 	public void PlaceCandy(float d, float mD){
 		Vector3 candyPosition = transform.position;
-		candyPrefab = GameObject.Find ("LevelHandler").GetComponent<PrefabManager>().FindPrefab("X_CandyPrefab");
+		print (PrefabManager.Instance);
+		candyPrefab = PrefabManager.Instance.FindPrefab("X_CandyPrefab");
 		candyPosition.y += .5f;
 		print(candyPrefab);
 		if(d < dF * mD){

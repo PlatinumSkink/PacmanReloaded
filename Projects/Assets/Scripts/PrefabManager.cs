@@ -6,9 +6,14 @@ public class PrefabManager : MonoBehaviour {
 
 	Transform[] PrefabList;
 	string[] prefabNames;
+
+	public static PrefabManager Instance {get; private set;}
 	// Use this for initialization
 	void Start () {
-			
+	}
+
+	void Awake (){
+		Instance = this;
 	}
 	
 	// Update is called once per frame
