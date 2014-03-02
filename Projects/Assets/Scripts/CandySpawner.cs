@@ -26,4 +26,16 @@ public class CandySpawner : MonoBehaviour {
 			candy.parent = transform;
 		}
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		Component CandyScript;
+		CandyScript = GetComponentInChildren<Candy>();
+		if (CandyScript != null) {
+			if (other.gameObject.tag == "MainCamera") {
+				other.gameObject.BroadcastMessage ("AteNormalCandy");
+				CandyScript.BroadcastMessage("Destroy");
+			}
+		}
+	}
 }

@@ -78,10 +78,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e556c2251837443b10aa78522a486d, type: 3}
+  m_Script: {fileID: 11500000, guid: 418bf6e2f2930d04b946d58813983982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherTeleporter: {fileID: 0}
+  teleportTo: {x: 0, y: 0, z: 0}
+  teleporterType: 0
+  levelHandlerScript: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

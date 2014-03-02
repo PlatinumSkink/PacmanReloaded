@@ -90,6 +90,7 @@ GameObject:
   - 143: {fileID: 370575771}
   - 114: {fileID: 370575773}
   - 114: {fileID: 370575774}
+  - 114: {fileID: 370575775}
   m_Layer: 0
   m_Name: Player
   m_TagString: MainCamera
@@ -180,16 +181,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 370575765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec2fe99d1108b9d0006a298d76c639, type: 3}
+  m_Script: {fileID: 11500000, guid: 50a5da02ec1025c42a70f4bee2737d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 1
-  sensitivityX: 15
-  sensitivityY: 15
-  minimumX: -360
-  maximumX: 360
-  minimumY: -60
-  maximumY: 60
 --- !u!114 &370575773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,9 +192,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 370575765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31e2bf6d08b6de459963cb43f3a591d, type: 3}
+  m_Script: {fileID: 11500000, guid: ce45ced024aa660499a5845e90c39c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelHandler: {fileID: 1284697341}
+  player: {fileID: 370575770}
+  Points: 0
+  Lives: 3
+  PointLimit: 10000
 --- !u!114 &370575774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,11 +208,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 370575765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522dd2f879c36164f92bfd9c32150bb0, type: 3}
+  m_Script: {fileID: 11500000, guid: ee395a6f6e84a1f409ba16620fb9a8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelHandler: {fileID: 1284697341}
-  player: {fileID: 370575770}
+--- !u!114 &370575775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 370575765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2683f6cb7d6b5748863906bf0f01e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 0
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumX: -360
+  maximumX: 360
+  minimumY: -60
+  maximumY: 60
 --- !u!1 &1092810475
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,11 +317,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1284697341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f672c0df362e9942823a57a307f73cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d2a56b37e7f3e449881ec1c41f8f453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  player: {fileID: 370575770}
 --- !u!4 &1284697343
 Transform:
   m_ObjectHideFlags: 0
@@ -326,9 +339,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1284697341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7b2cb26b0275a746964ed0bbeb6874d, type: 3}
+  m_Script: {fileID: 11500000, guid: c5c895d7ce6ee68438b6cfd8319a6701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  player: {fileID: 370575770}
 --- !u!114 &1284697345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +352,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1284697341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b64e8824b3ce9342a72e8ff6577df06, type: 3}
+  m_Script: {fileID: 11500000, guid: 575e6dd83e5d62e4794c79a4b5241b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
