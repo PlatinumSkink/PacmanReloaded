@@ -6,14 +6,11 @@ using System.Collections.Generic;
 public class LevelHandlerScript : MonoBehaviour {
 	
 	public int level = 0;
-
+	public Transform player;
 	Transform[] PrefabList;
 	int[,] tileMap;
 	MapManager mapManager;
 	PrefabManager prefabManager;
-
-	public static LevelHandlerScript Instance {get; private set;}
-
 
 	// Use this for initialization
 	void Start () {
@@ -23,10 +20,6 @@ public class LevelHandlerScript : MonoBehaviour {
 		prefabManager.LoadPrefabs();
 		PrefabList = prefabManager.getPrefabs();
 		SetLevel (level);
-	}
-
-	void Awake (){
-		Instance = this;
 	}
 
 	void SetLevel(int nLevel){
@@ -45,11 +38,17 @@ public class LevelHandlerScript : MonoBehaviour {
 				//Loopar igenom tileMap, utför olika instruktioner beroende på tileMaps värde. 1 är väg, 2 är vägg.
 				Vector3 tilePosition = new Vector3(i, 0, j);
 				if(tileMap[i,j] > 0){
+					print(PrefabList.Length);
 				Transform curPrefab = PrefabList[tileMap[i,j] - 1];
 					tilePosition.y = curPrefab.localScale.y / 2;
 				Transform tile = (Transform) Instantiate(curPrefab, tilePosition, Quaternion.identity);
 					if(tile.GetComponent<CandySpawner>()){
-						tile.GetComponent<CandySpawner>().PlaceCandy((new Vector2(i,j) - center).magnitude, center.magnitude);
+						Transform prefab = prefabManager.FindPrefab("X_CandyPrefab");
+						tile.GetComponent<CandySpawner>().PlaceCandy((new Vector2(i,j) - center).magnitude, center.magnitude, prefab);
+					}
+					if(tile.GetComponent<TeleporterScript>()){
+						int x = tileMap[i, j];
+						TeleporterManager.AddTeleporter(x, tile, player, this);
 					}
 				tile.parent = transform;
 				}
@@ -58,7 +57,12 @@ public class LevelHandlerScript : MonoBehaviour {
 		level = nLevel;
 	}
 
-
+	public int GetPositionInfo(float x, float z){
+		int a = Mathf.RoundToInt(x);
+		int b = Mathf.RoundToInt(z);
+		return tileMap[a,b];
+	}
+	
 	public int GetPositionInfo (Vector3 position){
 		int x = Mathf.RoundToInt(position.x);
 		int y = Mathf.RoundToInt(position.z);

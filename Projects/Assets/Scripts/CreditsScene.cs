@@ -17,5 +17,9 @@ public class CreditsScene : MonoBehaviour {
 
 	void OnGUI(){
 		GUI.Label (new Rect (25, 25, 100, 30 * devs.Length), devs);
+
+		if (GUI.Button (new Rect (10, 230, 150, 100), "Back")) {
+			SceneManager.ChangeScene("MainMenu");
 		}
+	}
 }

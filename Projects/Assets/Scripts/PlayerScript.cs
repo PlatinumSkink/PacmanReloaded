@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
-
-	int Lives = 3;
-	int Points = 0;
-	int PointMeasurer = 0;
-	int ExtraLifeLimit = 10000;
+	
+	// Static references created in the Unity Editor
+	// http://answers.unity3d.com/questions/7555/how-do-i-call-a-function-in-another-gameobjects-sc.html
+	public GameObject levelHandler;
+	public Transform player;
 
 	// Use this for initialization
 	void Start () {
@@ -15,28 +15,6 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
 
-	int AddPoints (int points)
-	{
-		Points += points;
-		PointMeasurer += points;
-		if (PointMeasurer >= ExtraLifeLimit) 
-		{
-			Lives += 1;
-			PointMeasurer -= ExtraLifeLimit;
-		}
-		return Points;
-	}
-
-	bool Killed ()
-	{
-		Lives -= 1;
-		if (Lives <= 0) 
-		{
-			return true;
-		}
-		return false;
 	}
 }

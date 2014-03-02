@@ -14,7 +14,7 @@ public class CameraMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
@@ -37,6 +37,6 @@ public class CameraMovement : MonoBehaviour {
 		moveDirection.y -= gravity * Time.deltaTime;
 		
 		// Move the controller
-		controller.Move(moveDirection * Time.deltaTime);
+		controller.Move(moveDirection * Time.deltaTime);	
 	}
 }
