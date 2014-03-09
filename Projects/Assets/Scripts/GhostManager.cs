@@ -27,7 +27,7 @@ public class GhostManager : MonoBehaviour {
 
 		for (int i = 0; i < directions.Length; i++)
 		{
-			if (GetComponent<LevelHandlerScript>().GetPositionInfo(pos.x + directionArray[i].x, pos.y + directionArray[i].y) == 1)
+			if (GetComponent<LevelHandlerScript>().GetPositionInfo(pos.x + directionArray[i].x, pos.z + directionArray[i].y) == 1)
 			{
 				directions[i] = true;
 			}
@@ -37,6 +37,6 @@ public class GhostManager : MonoBehaviour {
 			}
 		}
 		print (directions[0] + " " + directions[1] + " " + directions[2] + " " + directions[3]);
-		ghost.GetComponent<Ghost> ().Targeting (directions, new Vector2(player.transform.position.x, player.transform.position.y));
+		ghost.GetComponent<Ghost> ().Targeting (directions, new Vector2(player.transform.position.x, player.transform.position.z));
 	}
 }
