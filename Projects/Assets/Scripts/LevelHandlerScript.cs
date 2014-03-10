@@ -55,6 +55,9 @@ public class LevelHandlerScript : MonoBehaviour {
 			}
 		}
 		level = nLevel;
+
+		//Niklas adds, the ghosts need to know the corners of the new map.
+		GetComponent<GhostManager> ().SetScatterPoints (width, height);
 	}
 
 	public int GetPositionInfo(float x, float z){
