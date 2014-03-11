@@ -5,23 +5,25 @@ public class GameOverCameraScript : MonoBehaviour {
 	private Vector3 endPos;
 	private Vector3 pacManPos;
 	private float lerp;
-	private bool useGameOverCamera;
 	// Use this for initialization
 	void Start () {
 		lerp = 0.05f;
-		useGameOverCamera = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (Input.GetKeyDown (KeyCode.X)) {
-			useGameOverCamera = !useGameOverCamera;
+			this.camera.enabled = true;
 		}
 
-		if(useGameOverCamera)
+		if (Input.GetKeyDown (KeyCode.Z)) {
+			this.camera.enabled = false;
+		}
+
+		if(this.camera.enabled)
 	    {
-			this.camera.enabled = true;
+
 			GameObject levelHandler = GameObject.Find ("LevelHandler");
 			LevelHandlerScript script = levelHandler.GetComponent<LevelHandlerScript> ();
 			GameObject PacMan = GameObject.Find ("Player");

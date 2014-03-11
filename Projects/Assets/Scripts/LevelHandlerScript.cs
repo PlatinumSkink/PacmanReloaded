@@ -78,6 +78,16 @@ public class LevelHandlerScript : MonoBehaviour {
 		return tileMap[x,y];
 	}
 
+	public int GetLevelWidth()
+	{
+		return tileMap.GetLength(0);
+	}
+
+	public int GetLevelDepth()
+	{
+		return tileMap.GetLength(1);
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Q)){
