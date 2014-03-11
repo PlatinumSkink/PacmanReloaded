@@ -1,20 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Billboarding.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Billboarding.cs" Line="16" Column="3" />
-      <File FileName="Assets\Scripts\Candy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CandySpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TeleporterManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LevelHandlerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CameraMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SceneManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TeleporterScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MapManager.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
