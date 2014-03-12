@@ -23,7 +23,6 @@ public class GameOverCameraScript : MonoBehaviour {
 
 		if(this.camera.enabled)
 	    {
-
 			GameObject levelHandler = GameObject.Find ("LevelHandler");
 			LevelHandlerScript script = levelHandler.GetComponent<LevelHandlerScript> ();
 			GameObject PacMan = GameObject.Find ("Player");
@@ -32,7 +31,8 @@ public class GameOverCameraScript : MonoBehaviour {
 			// Find the level's centerpoint
 			int width = script.GetLevelWidth ();
 			int depth = script.GetLevelDepth ();
-			endPos = new Vector3 (width / 2, 20, depth / 2);
+			int height = width > depth ? width : depth; // Set the height so that the entire map will be visible when you look down.
+			endPos = new Vector3 (width / 2, height, depth / 2);
 			this.transform.position = Vector3.Lerp (pacManPos, endPos, lerp);
 			this.transform.rotation = Quaternion.LookRotation(Vector3.down);
 			if(lerp <= 1.0f)
