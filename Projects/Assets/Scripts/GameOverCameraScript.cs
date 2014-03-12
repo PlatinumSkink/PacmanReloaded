@@ -7,7 +7,7 @@ public class GameOverCameraScript : MonoBehaviour {
 	private float lerp;
 	// Use this for initialization
 	void Start () {
-		lerp = 0.05f;
+
 	}
 	
 	// Update is called once per frame
@@ -15,6 +15,7 @@ public class GameOverCameraScript : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.X)) {
 			this.camera.enabled = true;
+			lerp = 0.0f;
 		}
 
 		if (Input.GetKeyDown (KeyCode.Z)) {
@@ -37,7 +38,7 @@ public class GameOverCameraScript : MonoBehaviour {
 			this.transform.rotation = Quaternion.LookRotation(Vector3.down);
 			if(lerp <= 1.0f)
 			{
-				lerp += 0.05f;
+				lerp += 0.01f;
 			}
 		}
 	
