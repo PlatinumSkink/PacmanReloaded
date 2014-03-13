@@ -17,8 +17,8 @@ public class GameGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		life = "Points: " + player.GetComponent<PlayerScript> ().Lives;
-		points = "Lives: " + player.GetComponent<PlayerScript> ().Points;
+		points = "Points: " + player.GetComponent<PlayerScript> ().Points;
+		life = "Lives: " + player.GetComponent<PlayerScript> ().Lives;
 		jumps = "Jumps: " + player.GetComponent<CameraMovement> ().jumpsRemaining;
 	}
 
