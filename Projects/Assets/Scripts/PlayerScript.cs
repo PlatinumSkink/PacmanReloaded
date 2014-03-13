@@ -3,12 +3,6 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 	
-	// Static references created in the Unity Editor
-	// http://answers.unity3d.com/questions/7555/how-do-i-call-a-function-in-another-gameobjects-sc.html
-	public GameObject levelHandler;
-	public Transform player;
-	// ... Vad är detta ovan?
-
 	public int Points = 0;
 	public int Lives = 3;
 	int PointMeasurer = 0;
@@ -21,7 +15,9 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if(transform.position.y < -10){
+			OnDeath();
+		}
 	}
 
 	int AteNormalCandy ()
@@ -41,5 +37,11 @@ public class PlayerScript : MonoBehaviour {
 		if (collider.CompareTag("Ghost") ){
 			print (this.name + " bumped into a ghost");
 		}
+	}
+
+	void OnDeath(){
+		Lives--;
+		//GameObject.Find("3_StartPrefab").GetComponent<Initializer>().PlacePlayer();
+
 	}
 }

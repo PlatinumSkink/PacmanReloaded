@@ -8,11 +8,15 @@ public class Initializer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
-		player.transform.position = transform.position + new Vector3(0,6,0);
+		PlacePlayer ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void PlacePlayer(){
+		player.transform.position = transform.position + new Vector3(0,6,0);
 	}
 }

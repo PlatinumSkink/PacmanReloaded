@@ -195,8 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce45ced024aa660499a5845e90c39c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelHandler: {fileID: 1284697341}
-  player: {fileID: 370575770}
   Points: 0
   Lives: 3
   PointLimit: 10000

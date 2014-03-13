@@ -1,14 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HauntScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameGUI.cs" Line="20" Column="68" />
-      <File FileName="Assets\Scripts\GameGUI.cs" Line="32" Column="1" />
-      <File FileName="Assets\Scripts\CreditsScene.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CameraMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Ghost.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameOverCameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="46" Column="3" />
+      <File FileName="Assets\Scripts\GhostManager.cs" Line="27" Column="2" />
+      <File FileName="Assets\Scripts\MapManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PrefabManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelHandlerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HauntScript.cs" Line="12" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

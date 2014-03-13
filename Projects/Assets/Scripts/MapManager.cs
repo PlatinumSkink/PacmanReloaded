@@ -6,8 +6,8 @@ public class MapManager : MonoBehaviour {
 
 	Texture2D[] mapTextures;
 	int[][,] tileMaps;
-	Color[] tileMapKey = {Color.red, Color.white, Color.black, Color.cyan, Color.green};
-	//I ordning: 0: tomt block, 1:väg, 2: vägg, 3: startpunkt (PacMan)
+	Color[] tileMapKey = {Color.red, Color.white, Color.black, Color.cyan, Color.green, Color.blue, Color.magenta};
+	//I ordning: 0: tomt block, 1:väg, 2: vägg, 3: startpunkt (PacMan), 4: teleporter (grön), 5: teleporter (blå), 6: startplats för spöken
 
 	// Use this for initialization
 	void Start () {}
