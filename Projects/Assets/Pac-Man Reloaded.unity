@@ -606,6 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  candies: 1
   player: {fileID: 370575770}
 --- !u!114 &1284697345
 MonoBehaviour:

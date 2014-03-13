@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class LevelHandlerScript : MonoBehaviour {
 	
 	public int level = 0;
+	public int candies = 1;
 	public Transform player;
 	Transform[] PrefabList;
 	int[,] tileMap;
@@ -58,6 +59,8 @@ public class LevelHandlerScript : MonoBehaviour {
 
 		//Niklas adds, the ghosts need to know the corners of the new map.
 		GetComponent<GhostManager> ().SetScatterPoints (width, height);
+
+		candies = GetNumberOfCandies ();
 	}
 
 	public int GetPositionInfo(float x, float z){
@@ -86,6 +89,14 @@ public class LevelHandlerScript : MonoBehaviour {
 	public int GetLevelDepth()
 	{
 		return tileMap.GetLength(1);
+	}
+
+	public int GetNumberOfCandies()
+	{
+		GameObject[] objectList;
+		objectList = GameObject.FindGameObjectsWithTag ("Candy");
+		int amount = objectList.Length;
+		return amount;
 	}
 
 	// Update is called once per frame

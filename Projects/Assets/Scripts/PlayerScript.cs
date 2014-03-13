@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour {
 	{
 		Points += 10;
 		PointMeasurer += 10;
+		levelHandler.GetComponent<LevelHandlerScript>().candies--;
 		if (PointMeasurer >= PointLimit) 
 		{
 			PointMeasurer -= PointLimit;
