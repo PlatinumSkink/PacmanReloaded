@@ -35,4 +35,11 @@ public class PlayerScript : MonoBehaviour {
 		}
 		return Points;
 	}
+
+	void OnTriggerEnter(Collider collider)
+	{
+		if (collider.CompareTag("Ghost") ){
+			print (this.name + " bumped into a ghost");
+		}
+	}
 }

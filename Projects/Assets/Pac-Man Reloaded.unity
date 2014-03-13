@@ -229,9 +229,10 @@ GameObject:
   - 114: {fileID: 408237678}
   - 114: {fileID: 408237677}
   - 114: {fileID: 408237681}
+  - 135: {fileID: 408237682}
   m_Layer: 0
   m_Name: Pinky
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -309,6 +310,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Blinky: {fileID: 978966608}
+--- !u!135 &408237682
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 408237676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .560000002
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &517495556
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,9 +398,10 @@ GameObject:
   - 114: {fileID: 978966606}
   - 114: {fileID: 978966605}
   - 114: {fileID: 978966609}
+  - 135: {fileID: 978966610}
   m_Layer: 0
   m_Name: Blinky
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -464,6 +478,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac5429a8e57b7d409b8c461935068a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &978966610
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 978966604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .560000002
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1092810475
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,9 +646,10 @@ GameObject:
   - 114: {fileID: 1608617893}
   - 114: {fileID: 1608617896}
   - 114: {fileID: 1608617897}
+  - 135: {fileID: 1608617898}
   m_Layer: 0
   m_Name: Clyde
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -699,6 +726,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cfb12b553ba08c4eab8a046b134b09f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &1608617898
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1608617892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .560000002
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1907098650
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,9 +750,10 @@ GameObject:
   - 114: {fileID: 1907098652}
   - 114: {fileID: 1907098651}
   - 114: {fileID: 1907098655}
+  - 135: {fileID: 1907098656}
   m_Layer: 0
   m_Name: Inky
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -790,6 +830,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9789b1bc02223746ada1ddd00e988f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &1907098656
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1907098650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .560000002
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1934775723
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +853,6 @@ GameObject:
   - 20: {fileID: 1934775728}
   - 124: {fileID: 1934775727}
   - 92: {fileID: 1934775726}
-  - 81: {fileID: 1934775725}
   - 114: {fileID: 1934775724}
   m_Layer: 0
   m_Name: GameOverCamera
@@ -821,13 +872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8910f9203ebb154cb5930913614fec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!81 &1934775725
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1934775723}
-  m_Enabled: 1
 --- !u!92 &1934775726
 Behaviour:
   m_ObjectHideFlags: 0
