@@ -1,16 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GhostManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="59" Column="59" />
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="59" Column="46" />
       <File FileName="Assets\Scripts\Etcher.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelHandlerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GameGUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CreditsScene.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameOverCameraScript.cs" Line="27" Column="3" />
-      <File FileName="Assets\Scripts\GhostManager.cs" Line="23" Column="2" />
-      <File FileName="Assets\Scripts\Ghost.cs" Line="25" Column="21" />
+      <File FileName="Assets\Scripts\GameOverCameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GhostManager.cs" Line="137" Column="9" />
+      <File FileName="Assets\Scripts\Ghost.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

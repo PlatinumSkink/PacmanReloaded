@@ -134,4 +134,12 @@ public class GhostManager : MonoBehaviour {
 
 		ghost.GetComponent<Ghost> ().Targeting (directions, target);
 	}
+	public void Pause()
+	{
+		pause = true;
+		for (int i = 0; i < ghosts.Length; i++)
+		{
+			ghosts[i].audio.Stop();
+		}
+	}
 }
