@@ -24,18 +24,29 @@ public class PlayerScript : MonoBehaviour {
 
 	}
 
-	int AteNormalCandy ()
+	void AteNormalCandy ()
 	{
-		Points += 10;
-		PointMeasurer += 10;
-		levelHandler.GetComponent<LevelHandlerScript>().candies--;
+		AteCandy (10);
 		BroadcastMessage ("PlayAudio");
+	}
+
+	void AteSuperSemla ()
+	{
+		AteCandy (50);
+		GetComponent<CameraMovement> ().jumpsRemaining += 2;
+		BroadcastMessage ("PlayOtherAudio");
+	}
+
+	void AteCandy (int points)
+	{
+		Points += points;
+		PointMeasurer += points;
+		levelHandler.GetComponent<LevelHandlerScript>().candies--;
 		if (PointMeasurer >= PointLimit) 
 		{
 			PointMeasurer -= PointLimit;
 			Lives++;
 		}
-		return Points;
 	}
 
 	void OnTriggerEnter(Collider collider)
