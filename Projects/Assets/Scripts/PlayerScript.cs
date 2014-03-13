@@ -52,7 +52,10 @@ public class PlayerScript : MonoBehaviour {
 	void OnTriggerEnter(Collider collider)
 	{
 		if (collider.CompareTag("Ghost") ){
-			print (this.name + " bumped into a ghost");
+			//  print (this.name + " bumped into a ghost");
+			GameObject gameOverCamera = GameObject.Find("GameOverCamera");
+			Camera camera =gameOverCamera.GetComponent<Camera>();
+			gameOverCamera.BroadcastMessage("GameOver");
 		}
 	}
 }

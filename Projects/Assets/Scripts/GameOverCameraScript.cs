@@ -45,9 +45,18 @@ public class GameOverCameraScript : MonoBehaviour {
 	}
 	void GameOver ()
 	{
+		this.camera.enabled = true;
 		if (audio.isPlaying == false) 
 		{
 			audio.Play ();
+		}
+		lerp = 0.0f;
+	}
+
+	void OnGUI()
+	{
+		if (camera.enabled) {
+			GUI.Label (new Rect (125, 25, 150, 30),"YOU HAVE DIED");
 		}
 	}
 }
