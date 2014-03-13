@@ -3,8 +3,6 @@ using System.Collections;
 
 public class SoundObjectFile : MonoBehaviour {
 
-	public Transform target;
-
 	// Use this for initialization
 	void Start () {
 	
@@ -12,7 +10,6 @@ public class SoundObjectFile : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		this.transform.position = target.transform.position;
 	}
 
 	void PlayAudio()
