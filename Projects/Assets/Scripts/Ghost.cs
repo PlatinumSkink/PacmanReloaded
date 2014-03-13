@@ -121,7 +121,6 @@ public class Ghost : MonoBehaviour {
 		{
 			currentDirection -= 4;
 		}
-		print (currentDirection);
 		SetDirection ();
 	}
 
