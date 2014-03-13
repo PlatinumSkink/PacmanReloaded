@@ -11,6 +11,7 @@ public class GhostManager : MonoBehaviour {
 	float frightenedTime = 6;
 	Vector2 PlayerLocation;
 	Vector2 PreviousPlayerLocation;
+	public bool pause = false;
 
 	enum GhostState
 	{
@@ -36,6 +37,13 @@ public class GhostManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (pause == false) 
+		{
+			StateCheck();
+		}
+	}
+	void StateCheck ()
+	{
 		StateTimer += Time.deltaTime;
 		//print (StateTimer);
 		//print (state);
@@ -52,6 +60,7 @@ public class GhostManager : MonoBehaviour {
 		for (int i = 0; i < ghosts.Length; i++)
 		{
 			GetTarget (ghosts[i]);
+			ghosts[i].BroadcastMessage("GhostUpdate");
 		}
 		switch (state) 
 		{

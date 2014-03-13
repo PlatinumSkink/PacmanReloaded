@@ -21,6 +21,8 @@ public class GameOverCameraScript : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Z)) {
 			this.camera.enabled = false;
+			GameObject levelHandler = GameObject.Find ("LevelHandler");
+			levelHandler.GetComponent<GhostManager>().pause = false;
 		}
 
 		if(this.camera.enabled)

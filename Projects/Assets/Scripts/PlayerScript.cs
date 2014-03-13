@@ -56,6 +56,7 @@ public class PlayerScript : MonoBehaviour {
 			GameObject gameOverCamera = GameObject.Find("GameOverCamera");
 			Camera camera =gameOverCamera.GetComponent<Camera>();
 			gameOverCamera.BroadcastMessage("GameOver");
+			levelHandler.GetComponent<GhostManager>().pause = true;
 		}
 	}
 }

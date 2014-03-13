@@ -19,6 +19,15 @@ public class Ghost : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+	}
+
+	void GhostUpdate ()
+	{
+		if (audio.isPlaying == false) 
+		{
+			audio.Play();
+		}
 		pos = gameObject.transform.position;
 		pos.x += direction.x * speed;
 		pos.z += direction.y * speed;
