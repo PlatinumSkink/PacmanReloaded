@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour {
 	float speed = 4.0f;
 	float jumpSpeed = 8.0f;
 	float gravity = 20.0f;
+	public int jumpsRemaining = 2;
 	private Vector3 moveDirection = Vector3.zero;
 
 	// Use this for initialization
@@ -29,7 +30,8 @@ public class CameraMovement : MonoBehaviour {
 			moveDirection = transform.TransformDirection(moveDirection);
 			moveDirection *= speed;
 			
-			if (Input.GetButton ("Jump")) {
+			if (Input.GetButtonDown ("Jump") && jumpsRemaining > 0) {
+				jumpsRemaining--;
 				moveDirection.y = jumpSpeed;
 			}
 		}
