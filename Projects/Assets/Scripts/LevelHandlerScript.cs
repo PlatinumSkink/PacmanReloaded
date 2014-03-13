@@ -61,6 +61,7 @@ public class LevelHandlerScript : MonoBehaviour {
 		GetComponent<GhostManager> ().SetScatterPoints (width, height);
 
 		candies = GetNumberOfCandies ();
+		player.audio.Play ();
 	}
 
 	public int GetPositionInfo(float x, float z){

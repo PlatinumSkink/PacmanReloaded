@@ -15,6 +15,7 @@ public class GameOverCameraScript : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.X)) {
 			this.camera.enabled = true;
+			GameOver();
 			lerp = 0.0f;
 		}
 
@@ -41,6 +42,12 @@ public class GameOverCameraScript : MonoBehaviour {
 				lerp += 0.01f;
 			}
 		}
-	
+	}
+	void GameOver ()
+	{
+		if (audio.isPlaying == false) 
+		{
+			audio.Play ();
+		}
 	}
 }
