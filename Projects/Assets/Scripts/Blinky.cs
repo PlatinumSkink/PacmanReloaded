@@ -13,6 +13,7 @@ public class Blinky : MonoBehaviour {
 	
 	}
 
+	//Blinky will simply pursue the player, straight off.
 	public Vector2 Chase (Vector2 player)
 	{
 		return player;

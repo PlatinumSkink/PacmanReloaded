@@ -13,6 +13,8 @@ public class GhostManager : MonoBehaviour {
 	Vector2 PreviousPlayerLocation;
 	public bool pause = false;
 
+	//Four states. Chase follows Pac-Man. Scatter pursues each ghost's scatter point in the corners.
+	//Frightened goes randomly when Pac-Man has eaten a SuperSemla. Home runs around in the home or back to it when the ghost has been eaten.
 	enum GhostState
 	{
 		Chase,
@@ -45,12 +47,10 @@ public class GhostManager : MonoBehaviour {
 	void StateCheck ()
 	{
 		StateTimer += Time.deltaTime;
-		//print (StateTimer);
-		//print (state);
 
 		Vector2 roughLoc = new Vector2 ((float)Mathf.RoundToInt((float)(player.transform.position.x)), (float)Mathf.RoundToInt((float)(player.transform.position.z)));
 
-		//Jag visste inte hur att ta reda på vilket håll spelaren tittade åt, så jag använde mig av rutan han senast lämnade istället och antog han titta åt hållet han går åt.
+		//I did not know how to find out which direction the player is looking, so I used the previous square the player was standing on and assumed he looked in the opposite direction.
 		if (PlayerLocation != roughLoc) 
 		{
 			PreviousPlayerLocation = PlayerLocation;
@@ -62,6 +62,8 @@ public class GhostManager : MonoBehaviour {
 			GetTarget (ghosts[i]);
 			ghosts[i].BroadcastMessage("GhostUpdate");
 		}
+
+		//Three out of four states operate on a timer which the state will end upon the timer going over a value.
 		switch (state) 
 		{
 		case GhostState.Chase:
@@ -92,6 +94,7 @@ public class GhostManager : MonoBehaviour {
 		};
 	}
 
+	//Each ghost has his or her scatter point in a different corner. This code is accessed from SetLevel in LevelHandler when the level is created with the individual width and height of each level.
 	public void SetScatterPoints (int width, int height)
 	{
 		ghosts [0].GetComponent<Ghost> ().ScatterPoint = new Vector2 (width, height);
@@ -100,16 +103,18 @@ public class GhostManager : MonoBehaviour {
 		ghosts [3].GetComponent<Ghost> ().ScatterPoint = new Vector2 (0, 0);
 	}
 
+	//This is the code which tells each ghost to find what target square they're aiming for.
 	void GetTarget (Transform ghost)
 	{
 		Vector2 target = Vector2.zero;
 		Vector3 pos = ghost.transform.position;
 		bool[] directions = new bool[4];
 
+		//For each direction, marked in the directionArray, it examines what kind of tile it is. As long as it isn't empty space (0) or a wall (2), the ghosts can move over it.
 		for (int i = 0; i < directions.Length; i++)
 		{
 			int kindOfTile = GetComponent<LevelHandlerScript>().GetPositionInfo(pos.x + directionArray[i].x, pos.z + directionArray[i].y);
-			if ( kindOfTile != 0 && kindOfTile != 2)
+			if (kindOfTile != 0 && kindOfTile != 2)
 			{
 				directions[i] = true;
 			}
@@ -119,8 +124,7 @@ public class GhostManager : MonoBehaviour {
 			}
 		}
 
-		//print (directions[0] + " " + directions[1] + " " + directions[2] + " " + directions[3]);
-
+		//Depending on the state, the ghosts will go for different targets. Here is where this is determined.
 		if (state == GhostState.Chase) 
 		{
 			target = ghost.GetComponent<Ghost> ().GetChaseTarget (PlayerLocation, PreviousPlayerLocation);
@@ -132,8 +136,11 @@ public class GhostManager : MonoBehaviour {
 			//target = ghost.GetComponent<Ghost> ().GetChaseTarget (PlayerLocation, PreviousPlayerLocation);
 		}
 
+		//Finally, send the obtained target and available directions to the ghosts so they can decide where they want to go.
 		ghost.GetComponent<Ghost> ().Targeting (directions, target);
 	}
+
+	//At the pause command, all music will be terminated and pause will turn true. This should stop movement.
 	public void Pause()
 	{
 		pause = true;

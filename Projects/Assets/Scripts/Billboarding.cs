@@ -13,6 +13,7 @@ public class Billboarding : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//If GameOver, the billboard should look at the GameOver camera. Otherwise at the player.
 		if (gameOverCamera.camera.enabled) {
 			this.transform.LookAt (gameOverCamera.transform.position);
 		} else {

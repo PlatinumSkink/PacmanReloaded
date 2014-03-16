@@ -15,6 +15,7 @@ public class CandySpawner : MonoBehaviour {
 	
 	}
 
+	//The tile will generate a candy above it assuming some variables.
 	public void PlaceCandy(float d, float mD, Transform prefab){
 		Vector3 candyPosition = transform.position;
 		//candyPrefab = GameObject.Find ("LevelHandler").GetComponent<PrefabManager>().FindPrefab("X_CandyPrefab");
@@ -27,6 +28,7 @@ public class CandySpawner : MonoBehaviour {
 		}
 	}
 
+	//Upon contact between the tile and the player, the candy will be considered eaten and the message will be sent to the player while the candy is destroyed.
 	void OnTriggerEnter(Collider other)
 	{
 		Component CandyScript;

@@ -13,6 +13,7 @@ public class Inky : MonoBehaviour {
 	
 	}
 
+	//Pinky will aim for the tile four tiles in front of the player, opposite of the direction last left.
 	public Vector2 Chase (Vector2 playerLoc, Vector2 prevPlayerLoc)
 	{
 		Vector2 distance = new Vector2 (prevPlayerLoc.x - playerLoc.x, prevPlayerLoc.y - playerLoc.y);

@@ -45,6 +45,8 @@ public class GameOverCameraScript : MonoBehaviour {
 			}
 		}
 	}
+
+	//Upon GameOver, enable the camera so above commands happen and play the GameOver tune.
 	void GameOver ()
 	{
 		this.camera.enabled = true;

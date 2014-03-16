@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour {
 		
 	}
 
+	//This will generate three buttons for us to press in the menu.
 	void OnGUI() {
 		if (GUI.Button (new Rect (10,10,150,100), "Start")) {
 			SceneManager.ChangeScene("Pac-Man Reloaded");

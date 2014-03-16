@@ -16,7 +16,7 @@ public class GameGUI : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frame, and is used to update the variables displayed.
 	void Update () {
 		points = "Points: " + player.GetComponent<PlayerScript> ().Points;
 		life = "Lives: " + player.GetComponent<PlayerScript> ().Lives;
@@ -24,6 +24,7 @@ public class GameGUI : MonoBehaviour {
 		candies = "Candies left: " + level.GetComponent<LevelHandlerScript> ().candies;
 	}
 
+	//OnGUI draws the texts with the different informations on the screen.
 	void OnGUI()
 	{
 		GUI.Label (new Rect (25, 25, 100, 30 * points.Length), points);

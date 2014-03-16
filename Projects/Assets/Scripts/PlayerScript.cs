@@ -37,11 +37,12 @@ public class PlayerScript : MonoBehaviour {
 		BroadcastMessage ("PlayOtherAudio");
 	}
 
+	//When a candy is eaten, add points, subtract one from the number of candies needed to eat and compare if an additional life-point has been reached.
 	void AteCandy (int points)
 	{
 		Points += points;
 		PointMeasurer += points;
-		levelHandler.GetComponent<LevelHandlerScript>().candies--;
+		levelHandler.GetComponent<LevelHandlerScript> ().AteCandy ();
 		if (PointMeasurer >= PointLimit) 
 		{
 			PointMeasurer -= PointLimit;
@@ -49,6 +50,7 @@ public class PlayerScript : MonoBehaviour {
 		}
 	}
 
+	//Upon contact with a ghost, the camera switches to the overhead camera, the function for GameOver is played, a life is removed and if no lives left...
 	void OnTriggerEnter(Collider collider)
 	{
 		if (collider.CompareTag("Ghost") ){
@@ -57,6 +59,11 @@ public class PlayerScript : MonoBehaviour {
 			Camera camera =gameOverCamera.GetComponent<Camera>();
 			gameOverCamera.BroadcastMessage("GameOver");
 			levelHandler.GetComponent<GhostManager>().Pause();
+			Lives--;
+			if (Lives < 0)
+			{
+				SceneManager.ChangeScene("MainMenu");
+			}
 		}
 	}
 }

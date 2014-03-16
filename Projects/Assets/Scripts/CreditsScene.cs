@@ -15,6 +15,7 @@ public class CreditsScene : MonoBehaviour {
 	
 	}
 
+	//This code creates text which shows our names and a button with which to return to the main menu.
 	void OnGUI(){
 		GUI.Label (new Rect (25, 25, 100, 30 * devs.Length), devs);
 

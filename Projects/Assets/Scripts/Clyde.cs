@@ -13,6 +13,7 @@ public class Clyde : MonoBehaviour {
 	
 	}
 
+	//Clyde will go towards the player if he is 8 tiles distance away, otherwise he'll go towards his scatter point.
 	public Vector2 Chase (Vector2 player)
 	{
 		if (Mathf.Sqrt (Mathf.Pow (player.x - transform.position.x, 2) + Mathf.Pow (player.y - transform.position.y, 2)) > 8) 

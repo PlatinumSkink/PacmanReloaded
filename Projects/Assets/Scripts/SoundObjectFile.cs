@@ -12,6 +12,7 @@ public class SoundObjectFile : MonoBehaviour {
 	void Update () {
 	}
 
+	//Simply tell it to play. This is because one object can only hold one sound file.
 	void PlayAudio()
 	{
 		if (audio.isPlaying == false) 

@@ -6,6 +6,7 @@ public class Ghost : MonoBehaviour {
 	public string Name = "Blinky";
 	public float speed = 0.05f;
 	Vector2 direction = new Vector2(0, 1);
+	//For currentDirection 0 = Up, 1 = Left, 2 = Down, 3 = Right.
 	int currentDirection = 0;
 	Vector3 pos;
 	float moveCheck = 0;
@@ -22,6 +23,7 @@ public class Ghost : MonoBehaviour {
 
 	}
 
+	//The GhostUpdate will be run from the GhostManager class. It gets the direction and adds speed and direction to travel.
 	void GhostUpdate ()
 	{
 		if (audio.isPlaying == false) 
@@ -33,6 +35,7 @@ public class Ghost : MonoBehaviour {
 		pos.z += direction.y * speed;
 		gameObject.transform.position = pos;
 		moveCheck += speed;
+		//1 is the size of all squares. By the use of moveCheck, the ghost will only check for a new direction once per square.
 		if (moveCheck >= 1) 
 		{
 			move = true;
@@ -40,6 +43,7 @@ public class Ghost : MonoBehaviour {
 		}
 	}
 
+	//GetChaseTarget is the Strtegy base which gets different targets depending on which Ghost this is. It then returns the target spot.
 	public Vector2 GetChaseTarget (Vector2 playerLoc, Vector2 prevPlayerLoc)
 	{
 		Vector2 target = Vector2.zero;
@@ -69,6 +73,8 @@ public class Ghost : MonoBehaviour {
 		if (move == true) 
 		{
 			move = false;
+
+			//Since the ghosts will go with the shortest route, all unavailable routes are made absurdly long.
 			float[] distances = new float[4];
 			for (int i = 0; i < distances.Length; i++) 
 			{
@@ -123,6 +129,7 @@ public class Ghost : MonoBehaviour {
 		}
 	}
 
+	//If no available routes exist, we must have gone into a dead end. This code turns us around.
 	public void Reverse ()
 	{
 		currentDirection += 2;
@@ -133,6 +140,7 @@ public class Ghost : MonoBehaviour {
 		SetDirection ();
 	}
 
+	//Depending on currentDirection, SetDirection turns us in the set direction.
 	void SetDirection ()
 	{
 		if (currentDirection == 0) 

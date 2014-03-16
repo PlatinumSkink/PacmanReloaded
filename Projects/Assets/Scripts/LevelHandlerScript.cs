@@ -100,6 +100,16 @@ public class LevelHandlerScript : MonoBehaviour {
 		return amount;
 	}
 
+	//This is activated from Player when he eats a candy. Should all candies be eaten, next level.
+	public void AteCandy()
+	{
+		candies--;
+		if (candies <= 0) 
+		{
+			SetLevel(level);
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Q)){
